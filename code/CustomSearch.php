@@ -116,8 +116,8 @@ class CustomSearch extends Extension {
 		foreach ($data as $row) {
 
 			$do = DataObject::get_by_id($row['ClassName'], $row['ID']);
-			$do->Title = $row['Title'];
-			$do->Content = $row['Content'];
+			$do->SearchTitle = $row['Title'];
+			$do->SearchContent = $row['Content'];
 
 			$list->push($do);
 		}
