@@ -20,9 +20,9 @@ class PopulateSearch extends BuildTask {
 													Title varchar(255) NOT NULL,
 													Content text NOT NULL,
 													PageID integer NOT NULL DEFAULT 0,
-													PRIMARY KEY(ID, ClassName)
+													PRIMARY KEY(ID, ClassName),
+													FULLTEXT KEY `Title` (`Title` ,`Content`)
 												) ENGINE=MyISAM");
-		DB::query("ALTER TABLE SearchableDataObjects ADD FULLTEXT (`Title` ,`Content`)");
 	}
 	
 	/**
